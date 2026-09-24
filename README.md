@@ -47,14 +47,17 @@ Build and execute components easily in your terminal using `mingw32-make`:
   ```bash
   mingw32-make
 
-## Run Executable Driver
-./bin/client_dynamic.exe
+* **Run Executable Driver:**
+  ```bash
+   ./bin/client_dynamic.exe
 
-## Clean Build Artifacts
-mingw32-make clean
+* **Clean Build Artifacts:**
+   ```bash
+   mingw32-make clean
 
-## Run Automated System Installation
-mingw32-make install
+* **Run Automated System Installation:**
+   ```bash
+   mingw32-make install
 
  ## Version History & Release Tagging
 
