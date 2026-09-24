@@ -15,26 +15,6 @@ By completing this assignment, the project demonstrates proficiency in:
 * **Professional Version Control:** Managing multi-branch features (`multifile-build`, `static-build`, `dynamic-build`, `man-pages`), annotated tagging, and GitHub release asset management.
 
 ---
-
-##  Repository Architecture
-
-```text
-BSDSF24M004-OS-M04/
-├── src/                 # Implementation source code (.c)
-│   ├── main.c           # Driver program testing all utility modules
-│   ├── mystrfunctions.c # Custom string operations implementation
-│   └── myfilefunctions.c# Custom file operations implementation
-├── include/             # Interface header files (.h)
-│   ├── mystrfunctions.h # Declarations for string utilities
-│   └── myfilefunctions.h# Declarations for file utilities
-├── lib/                 # Compiled library outputs (libmyutils.a, libmyutils.so)
-├── bin/                 # Compiled executable binaries (client variants)
-├── obj/                 # Intermediate compiled object files (.o)
-├── man/                 # System manual files (groff format)
-│   └── man3/            # Section 3 programmer manual pages (e.g., mycat.1)
-├── REPORT.md            # Comprehensive technical analysis report
-└── Makefile             # Centralized build automation & installation script# BSDSF24M004-OS-M04
-
 ##  Feature Breakdown & Implementation Milestones
 
 ### 1. Feature 1: Project Scaffolding & Version Control
@@ -84,3 +64,24 @@ Stable development milestones are tagged and published with compiled assets:
 * **v0.2.1-static**: Static archive library linking (.a).
 * **v0.3.1-dynamic**: Modular shared object library linking (.so).
 * **v0.4.1-final**: Complete build package featuring man pages and installation targets.
+
+
+##  Repository Architecture
+
+```text
+BSDSF24M004-OS-M04/
+├── src/                 # Implementation source code (.c)
+│   ├── main.c           # Driver program testing all utility modules
+│   ├── mystrfunctions.c # Custom string operations implementation
+│   └── myfilefunctions.c# Custom file operations implementation
+├── include/             # Interface header files (.h)
+│   ├── mystrfunctions.h # Declarations for string utilities
+│   └── myfilefunctions.h# Declarations for file utilities
+├── lib/                 # Compiled library outputs (libmyutils.a, libmyutils.so)
+├── bin/                 # Compiled executable binaries (client variants)
+├── obj/                 # Intermediate compiled object files (.o)
+├── man/                 # System manual files (groff format)
+│   └── man3/            # Section 3 programmer manual pages (e.g., mycat.1)
+├── REPORT.md            # Comprehensive technical analysis report
+└── Makefile             # Centralized build automation & installation script# BSDSF24M004-OS-M04
+
