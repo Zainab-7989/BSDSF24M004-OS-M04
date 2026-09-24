@@ -4,7 +4,7 @@ A comprehensive, production-grade C project implementing low-level software engi
 
 ---
 
-## 🌟 Project Overview & Objectives
+##  Project Overview & Objectives
 This project centers on building a reusable general-purpose utility library named **`libmyutils`**, accompanied by a test driver program (`client`). The assignment spans the full software development lifecycle, moving from raw source compilation to static archiving, shared object linkage, system-wide installation, and structured technical reporting.
 
 By completing this assignment, the project demonstrates proficiency in:
@@ -16,7 +16,7 @@ By completing this assignment, the project demonstrates proficiency in:
 
 ---
 
-## 📂 Repository Architecture
+##  Repository Architecture
 
 ```text
 BSDSF24M004-OS-M04/
@@ -35,7 +35,7 @@ BSDSF24M004-OS-M04/
 ├── REPORT.md            # Comprehensive technical analysis report
 └── Makefile             # Centralized build automation & installation script# BSDSF24M004-OS-M04
 
-## 🚀 Feature Breakdown & Implementation Milestones
+##  Feature Breakdown & Implementation Milestones
 
 ### 1. Feature 1: Project Scaffolding & Version Control
 * **Initialization:** Initialized a standardized directory structure (`src`, `include`, `lib`, `bin`, `obj`, `man`).
@@ -59,7 +59,7 @@ BSDSF24M004-OS-M04/
 
 ---
 
-## ⚙️ Build, Test, & Installation Commands
+##  Build, Test, & Installation Commands
 
 Build and execute components easily in your terminal using `mingw32-make`:
 
