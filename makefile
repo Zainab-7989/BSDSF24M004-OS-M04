@@ -1,19 +1,19 @@
 CC = gcc
 CFLAGS = -Iinclude -Wall
 
-all: lib/libmyutils.a bin/client_static
+all: lib/libmyutils.so bin/client_dynamic
 
-obj/mystrfunctions.o: src/mystrfunctions.c include/mystrfunctions.h
-	$(CC) $(CFLAGS) -c src/mystrfunctions.c -o obj/mystrfunctions.o
+obj/mystrfunctions_pic.o: src/mystrfunctions.c include/mystrfunctions.h
+	$(CC) $(CFLAGS) -fPIC -c src/mystrfunctions.c -o obj/mystrfunctions_pic.o
 
-obj/myfilefunctions.o: src/myfilefunctions.c include/myfilefunctions.h
-	$(CC) $(CFLAGS) -c src/myfilefunctions.c -o obj/myfilefunctions.o
+obj/myfilefunctions_pic.o: src/myfilefunctions.c include/myfilefunctions.h
+	$(CC) $(CFLAGS) -fPIC -c src/myfilefunctions.c -o obj/myfilefunctions_pic.o
 
-lib/libmyutils.a: obj/mystrfunctions.o obj/myfilefunctions.o
-	ar rcs lib/libmyutils.a obj/mystrfunctions.o obj/myfilefunctions.o
+lib/libmyutils.so: obj/mystrfunctions_pic.o obj/myfilefunctions_pic.o
+	$(CC) -shared obj/mystrfunctions_pic.o obj/myfilefunctions_pic.o -o lib/libmyutils.so
 
-bin/client_static: src/main.c lib/libmyutils.a
-	$(CC) $(CFLAGS) src/main.c -Llib -lmyutils -o bin/client_static
+bin/client_dynamic: src/main.c lib/libmyutils.so
+	$(CC) $(CFLAGS) src/main.c -Llib -lmyutils -o bin/client_dynamic
 
 clean:
-	rm -f obj/*.o lib/*.a bin/client_static
+	rm -f obj/*.o lib/*.so bin/client_dynamic
