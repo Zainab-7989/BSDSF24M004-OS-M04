@@ -35,49 +35,52 @@ BSDSF24M004-OS-M04/
 ├── REPORT.md            # Comprehensive technical analysis report
 └── Makefile             # Centralized build automation & installation script# BSDSF24M004-OS-M04
 
+## 🚀 Feature Breakdown & Implementation Milestones
 
-# # **Feature Breakdown & Implementation Milestones:**
+### 1. Feature 1: Project Scaffolding & Version Control
+* **Initialization:** Initialized a standardized directory structure (`src`, `include`, `lib`, `bin`, `obj`, `man`).
+* **Version Control:** Implemented clean atomic commits tracking foundational changes under version control.
 
-**1. Feature 1:** Project Scaffolding & Version Control
-Initialized a standardized directory structure (src, include, lib, bin, obj, man).
+### 2. Feature 2: Multi-File Build (`v0.1.1-multifile`)
+* **Core Task:** Implemented custom functions for string operations (`mystrlen`, `mystrcpy`, `mystrncpy`, `mystrcat`) and file analysis (`wordCount`, `mygrep`).
+* **Build Strategy:** Wrote a multi-target `Makefile` to compile all source files directly into `bin/client`.
 
-Implemented clean atomic commits tracking foundational changes under version control.
+### 3. Feature 3: Static Library (`v0.2.1-static`)
+* **Core Task:** Refactored object compilation to bundle binary artifacts into a static archive (`lib/libmyutils.a`) using the `ar` archiver tool.
+* **Analysis:** Inspected symbol binding using `nm` and `objdump`, verifying that static code is directly embedded into the executable binary.
 
-**2. Feature 2: **Multi-File Build (v0.1.1-multifile)
-Core Task: Implemented custom functions for string operations (mystrlen, mystrcpy, mystrncpy, mystrcat) and file analysis (wordCount, mygrep).
+### 4. Feature 4: Dynamic Library (`v0.3.1-dynamic`)
+* **Core Task:** Compiled position-independent object code using `-fPIC` and generated a shared object library (`lib/libmyutils.so`) via gcc's `-shared` flag.
+* **Loader Management:** Handled runtime resolution via dynamic paths and verified dependency linkage using system loader tools.
 
-Build Strategy: Wrote a multi-target Makefile to compile all source files directly into bin/client.
+### 5. Feature 5: Documentation & Installation (`v0.4.1-final`)
+* **Documentation:** Created standard Linux manual files (`man/man3/mycat.1`) using `groff` text formatting markup (`.TH`, `.SH NAME`, `.SH SYNOPSIS`, `.SH DESCRIPTION`, `.SH AUTHOR`).
+* **Automation:** Embedded an `install` target inside the `Makefile` to copy binaries and manual files into target system directories.
 
-**3. Feature 3:** Static Library (v0.2.1-static)
-Core Task: Refactored object compilation to bundle binary artifacts into a static archive (lib/libmyutils.a) using the ar archiver tool.
+---
 
-Analysis: Inspected symbol binding using nm and objdump, verifying that static code is directly embedded into the executable binary.
+## ⚙️ Build, Test, & Installation Commands
 
-**4. Feature 4:** Dynamic Library (v0.3.1-dynamic)
-Core Task: Compiled position-independent object code using -fPIC and generated a shared object library (lib/libmyutils.so) via gcc's -shared flag.
+Build and execute components easily in your terminal using `mingw32-make`:
 
-Loader Management: Handled runtime resolution via dynamic paths and verified dependency linkage using system loader tools.
+* **Build Default Target (Dynamic Build):** 
+  ```bash
+  mingw32-make
 
-**5. Feature 5: **Documentation & Installation (v0.4.1-final)
-Documentation: Created standard Linux manual files (man/man3/mycat.1) using groff text formatting markup (.TH, .SH NAME, .SH SYNOPSIS, .SH DESCRIPTION, .SH AUTHOR).
+## Run Executable Driver
+./bin/client_dynamic.exe
 
-Automation: Embedded an install target inside the Makefile to copy binaries and manual files into target system directories.
+## Clean Build Artifacts
+mingw32-make clean
 
-# Build, Test, & Installation Commands
-Build and execute components easily in your terminal using mingw32-make
-
-**Build Default Target (Dynamic Build):**  mingw32-make
-**Run Executable Driver:**  ./bin/client_dynamic.exe
-**Clean Build Artifacts:**  mingw32-make clean
-**Run Automated System Installation:** mingw32-make install
+## Run Automated System Installation
+mingw32-make install
 
  ## Version History & Release Tagging
+
 Stable development milestones are tagged and published with compiled assets:
 
-**v0.1.1-multifile:** Baseline multi-file compilation.
-
-**v0.2.1-static:** Static archive library linking (.a).
-
-**v0.3.1-dynamic:** Modular shared object library linking (.so).
-
-**v0.4.1-final:** Complete build package featuring man pages and installation targets.
+* **v0.1.1-multifile**: Baseline multi-file compilation.
+* **v0.2.1-static**: Static archive library linking (.a).
+* **v0.3.1-dynamic**: Modular shared object library linking (.so).
+* **v0.4.1-final**: Complete build package featuring man pages and installation targets.
